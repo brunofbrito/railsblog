@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901221630) do
+ActiveRecord::Schema.define(version: 20150901223948) do
+
+  create_table "blog", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "linkedin"
+    t.string   "youtube"
+    t.string   "github"
+    t.string   "bground"
+    t.string   "logo"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"

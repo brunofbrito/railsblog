@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+   get 'blog/edit' => 'blog#edit', as: :settings
   resources :users, only: [:edit, :update]
   resources :posts do
     resources :comments

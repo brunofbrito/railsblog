@@ -1,0 +1,29 @@
+<%= form_for :blog do |form| %>
+  
+    <%= form.label :title %>
+    <%= form.text_field :title, type: 'text' %>
+
+    <%= form.label(:logo, :"Upload your logo")  %>
+    <%= form.file_field :logo %>
+
+    <%= form.label(:bground, :"Upload your background")  %>
+    <%= form.file_field :bground %>
+
+    <p>Social networks (URL please):</p>
+    <%= form.label(:facebook, :"Facebook")  %>
+    <%= form.text_field :facebook %>
+    <%= form.label(:twitter, :"Twitter")  %>
+    <%= form.text_field :twitter %>
+    <%= form.label(:linkedin, :"LinkedIn")  %>
+    <%= form.text_field :linkedin %>
+    <%= form.label(:instagram, :"Instagram")  %>
+    <%= form.text_field :instagram %>
+    <%= form.label(:youtube, :"YouTube")  %>
+    <%= form.text_field :youtube %>
+    <%= form.label(:github, :"Github")  %>
+    <%= form.text_field :github %>
+
+    <div class="submit-field">
+      <%= form.submit 'Update' %>
+    </div>
+  <% end %>
