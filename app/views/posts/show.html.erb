@@ -6,3 +6,18 @@
 <p><%= @post.description %></p>
 
 <%= link_to 'Back to Index', root_path %>
+<p>Leave a comment</p>
+
+<% @post.comments.each do |comment| %>
+    <% if @post.user_id == current_user.id %>
+            <%= link_to 'Delete Comment', post_comment_path(params[:id], comment), method: "delete" %>
+    <% end %>
+  <%= comment.title %>
+  <%= comment.description %>
+<% end %>
+
+<%= form_for @comment, url: post_comments_path(post_id: @post.id) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description, size: "60x12" %>
+  <%= f.submit "Create" %>
+<% end %>
