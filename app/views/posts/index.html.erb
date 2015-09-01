@@ -1,5 +1,6 @@
 <% if signed_in? %>
       Signed in as: <%= current_user.email %>
+      <%= link_to 'Add a post', new_post_path %>
       <%= button_to 'Sign out', sign_out_path, method: :delete %>
     <% else %>
       <%= link_to 'Sign in', sign_in_path %>
@@ -13,6 +14,10 @@
     
     <% @posts.each do |post| %>
       <h1><%= link_to post.title, post_path(post) %></h1>
+      <% if post.user_id == current_user.id %>
+        <%= link_to 'Edit Post', edit_post_path(post) %>
+        <%= link_to 'Delete Post', post_path(post), method: "delete" %>
+      <% end %>
       <p><%= post.description %></p>
     <%= post.created_at %><hr>
     <% end %>
