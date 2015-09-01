@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-<%= post.title %>
-<%= post.description %>
-<%= post.created_at %>
+<h1><%= link_to post.title, post_path(post) %></h1>
+<p><%= post.description %></p>
+<%= post.created_at %><hr>
 <% end %>
