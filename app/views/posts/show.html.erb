@@ -3,6 +3,7 @@
         <%= link_to 'Delete Post', post_path(@post), method: "delete" %>
 <% end %>
 <h1><%= @post.title %></h1>
+<p>Written on <%= @post.created_at.strftime("%A, %d/%m/%Y") %><p>
 <p><%= @post.description %></p>
 
 <%= link_to 'Back to Index', root_path %>
@@ -14,6 +15,7 @@
     <% end %>
   <%= comment.title %>
   <%= comment.description %>
+  <%= comment.created_at.strftime("%A, %d/%m/%Y") %>
 <% end %>
 
 <%= form_for @comment, url: post_comments_path(post_id: @post.id) do |f| %>

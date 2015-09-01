@@ -19,5 +19,5 @@
         <%= link_to 'Delete Post', post_path(post), method: "delete" %>
       <% end %>
       <p><%= post.description %></p>
-    <%= post.created_at %><hr>
+    <p>Posted on: <%= post.created_at.strftime("%A, %d/%m/%Y") %></p><hr>
     <% end %>
