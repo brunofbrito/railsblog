@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901212756) do
+ActiveRecord::Schema.define(version: 20150901221630) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150901212756) do
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
     t.string   "avatar"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email"
