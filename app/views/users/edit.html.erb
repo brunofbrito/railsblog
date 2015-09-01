@@ -4,6 +4,9 @@
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
+    <%= form.label :name %>
+    <%= form.text_field :name, type: 'text' %>
+
     <%= form.label(:avatar, :"Upload your avatar")  %>
     <%= form.file_field :avatar %> <br>
 
