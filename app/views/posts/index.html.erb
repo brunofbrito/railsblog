@@ -1,5 +1,7 @@
 <% if signed_in? %>
+      <img src="<%=current_user.avatar.url %>" />
       Signed in as: <%= current_user.email %>
+      <%= link_to 'Edit user', edit_user_path(current_user) %>
       <%= link_to 'Add a post', new_post_path %>
       <%= button_to 'Sign out', sign_out_path, method: :delete %>
     <% else %>
