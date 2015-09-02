@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    @blog = Settings.find(1)
     @posts = Post.all
   end
 
@@ -45,4 +46,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :description)
     end
+
 end
