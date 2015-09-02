@@ -9,9 +9,13 @@ $darkgrey: rgb(184,176,163);
 $grey: rgb(218,210,192);
 $lightgrey: rgb(223,213,193);
 
-.admin-top {
+body {
   background-color: $darkgrey;
-  padding: 10px;
+}
+
+.admin-top {
+  background-color: $darkblue;
+  padding: 10px 30px;
   color: $lightgrey;
   margin-bottom: 20px;
   display:flex;
@@ -20,6 +24,7 @@ $lightgrey: rgb(223,213,193);
     width: 50px;
     height: 50px;
     border-radius: 100%;
+    border: 2px $darkgrey solid;
   }
 }
 
@@ -35,40 +40,139 @@ $lightgrey: rgb(223,213,193);
 
 .admin-links a {
     padding: 10px;
-    font-family: $bodyfont;
-    color: $lightblue;
+    font-family: $headingfont;
+    color: $grey;
     font-size: 16px;
-    background-color: $grey;
+    background-color: $lightblue;
     text-transform: uppercase;
     text-decoration: none;
     margin-right: 10px;
     border-radius: 5px;
       &:hover {
-        color: $grey;
-        background-color: $lightblue;
+        color: $lightblue;
+        background-color: $grey;
       }
 }
 
 .user-links {
   p {
     font-style: italic;
-    margin: 0px 10px;
-    color: $lightblue;
+    margin: 0px 20px 0px 10px;
+    color: $lightgrey;
     font-size: 16px;
   }
   a {
     padding: 10px;
     font-family: $bodyfont;
-    color: $lightblue;
+    color: $grey;
     font-size: 16px;
-    background-color: $grey;
+    background-color: $lightblue;
     text-transform: uppercase;
     text-decoration: none;
     margin-right: 10px;
     border-radius: 5px;
       &:hover {
-        color: $grey;
-        background-color: $lightblue;
+        color: $lightblue;
+        background-color: $grey;
       }
+  }
 }
+
+.wrapper {
+  max-width: 990px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.branding {
+  padding: 25px 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.blog-logo {
+  flex: 1 100%;
+}
+
+.social .fa {
+  font-size: 30px;
+  margin: 5px;
+  color: $darkblue;
+  &:hover {
+    color: $lightblue;
+  }
+}
+
+.divider {
+  height: 20px;
+}
+
+.main-content {
+  background-color: white;
+  padding: 90px 90px 50px;
+  h1 a {
+    font-size: 36px;
+    font-family: $headingfont;
+    text-decoration: none;
+    font-weight: 700;
+    color: $lightblue;
+    text-transform: uppercase;
+    &:hover {
+      color: $darkblue;
+    }
+  }
+  p {
+    font-size: 16px;
+    line-height: 25px;
+    font-family: $bodyfont;
+  }
+  hr {
+      background: linear-gradient(to right, rgba(242,246,248,0) 0%, rgba(48,88,108,0.5) 50%, rgba(48,88,108,0) 100%);
+      height: 2px;
+      margin: 70px 0px;
+      border: none;
+  }
+  img {
+    max-width: 800px;
+    margin: 20px 0;
+  }
+}
+
+.post-info {
+  margin-top: 15px;
+  display: flex;
+}
+
+.time, .author {
+  color: $darkgrey;
+  margin-right: 25px;
+  & i {
+    color: $darkgrey;
+    margin-right: 3px;
+  }
+}
+
+.author-options {
+  margin: 10px 0;
+  & a {
+    color: $darkgrey;
+    text-decoration: none;
+    margin-right: 10px;
+    &:hover {
+      color: $lightblue;
+    }
+  }  
+}
+
+footer {
+  background-color: $darkblue;
+  height: 30px;
+  display: flex;
+  p {
+    font-family: $bodyfont;
+    font-size: 12px;
+    font-weight: 300;
+    color: $grey;
+  }
 }
