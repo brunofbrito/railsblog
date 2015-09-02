@@ -3,6 +3,9 @@ class SettingsController < ApplicationController
   def edit
     if Settings.exists? == false
       Settings.create
+      @settings = Settings.find(1)
+    else
+      @settings = Settings.find(1)
     end
   end
 
