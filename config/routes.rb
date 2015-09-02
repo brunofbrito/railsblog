@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-   get 'blog/edit' => 'blog#edit', as: :settings
+  get 'settings' => 'settings#edit', as: :settings
+  post 'settings' => 'settings#update'
+  put 'settings' => 'settings#update'
+  patch 'settings' => 'settings#update'
   resources :users, only: [:edit, :update]
   resources :posts do
     resources :comments

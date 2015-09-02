@@ -1,7 +1,6 @@
 class AddBlogSettings < ActiveRecord::Migration
   def change
     create_table :settings do |t|
-
       t.timestamps null: false
       t.string :title
       t.string :facebook
