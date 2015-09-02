@@ -1,5 +1,6 @@
 
 <% if signed_in? %>
+  <div class="admin-top">
       <img src="<%=current_user.avatar.url %>" />
       Signed in as: <%= current_user.email %>
       <%= link_to 'Blog Settings', settings_path %>
@@ -8,7 +9,8 @@
       <%= button_to 'Sign out', sign_out_path, method: :delete %>
       <%= render "layouts/social" %>
       <img src="<%=@blog.logo.url %>" />
-      <img src="<%=@blog.bground.url %>" />      
+      <img src="<%=@blog.bground.url %>" />
+  </div>   
     <% else %>
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
