@@ -1,19 +1,24 @@
 
 <% if signed_in? %>
   <div class="admin-top">
-      <img src="<%=current_user.avatar.url %>" />
-      Signed in as: <%= current_user.email %>
-      <%= link_to 'Blog Settings', settings_path %>
-      <%= link_to 'Edit user', edit_user_path(current_user) %>
+    <div class="admin-links">
       <%= link_to 'Add a post', new_post_path %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-      <%= render "layouts/social" %>
-      <img src="<%=@blog.logo.url %>" />
-      <img src="<%=@blog.bground.url %>" />
+      <%= link_to 'Blog Settings', settings_path %>
+    </div>
+    <div class="user-links">
+      <img src="<%=current_user.avatar.url %>" />
+      <p>Signed in as: <%= current_user.email %></p>
+      <%= link_to 'Edit user', edit_user_path(current_user) %>     
+      <%= link_to 'Sign out', sign_out_path, method: :delete %>
+    </div>
   </div>   
     <% else %>
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
+
+      <%= render "layouts/social" %>
+      <img src="<%=@blog.logo.url %>" />
+      <img src="<%=@blog.bground.url %>" />
 
     <div id="flash">
       <% flash.each do |key, value| %>
