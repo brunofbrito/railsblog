@@ -51,7 +51,10 @@ $lightgrey: rgb(223,213,193);
 
 .user-links {
   p {
-    margin-right: 10px;
+    font-style: italic;
+    margin: 0px 10px;
+    color: $lightblue;
+    font-size: 16px;
   }
   a {
     padding: 10px;
