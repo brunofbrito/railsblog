@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @blog = Settings.find(1)
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def show
