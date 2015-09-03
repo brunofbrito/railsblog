@@ -236,7 +236,6 @@ html, body {
   display: flex;
   align-items: center;
   color: $darkgrey;
-  margin-right: 25px;
   & i {
     color: $darkgrey;
     margin-right: 3px;
@@ -316,6 +315,9 @@ p.comment-data {
     border: 1px solid $lightblue;
     font-family: $headingfont;
     text-align: center;
+  }
+  img {
+    max-width: 100%;
   }
   form {
     label {

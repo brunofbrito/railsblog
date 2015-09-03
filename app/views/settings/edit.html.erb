@@ -10,10 +10,20 @@
             <%= form.label :title %>
             <%= form.text_field :title, type: 'text' %>
 
-            <%= form.label(:logo, :"Upload your logo")  %>
+            <% if logo.empty? == false %>
+                <%= form.label(:"Current logo") %>
+                <img src="<%= logo %>">
+            <% end %>
+
+            <%= form.label(:logo, :"Upload a new logo")  %>
             <%= form.file_field :logo %>
 
-            <%= form.label(:bground, :"Upload your background")  %>
+             <% if background.empty? == false %>
+                <%= form.label(:"Current background") %>
+                <img src="<%= background %>">
+            <% end %>
+
+            <%= form.label(:bground, :"Upload a new background")  %>
             <%= form.file_field :bground %>
 
             <div class="submit-field">

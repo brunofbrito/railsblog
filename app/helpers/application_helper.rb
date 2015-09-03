@@ -1,6 +1,10 @@
 module ApplicationHelper
   def title
     title = Settings.find(1).title
+  end
+
+  def logo
+    logo = Settings.find(1).logo.url
   end  
 
   def background
