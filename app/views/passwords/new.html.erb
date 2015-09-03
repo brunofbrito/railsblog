@@ -1,0 +1,23 @@
+<%= render "layouts/admintop" %>
+<%= render "layouts/navtop" %>
+
+<div class="wrapper">
+  <div class="main-content">
+    <div class="form">
+
+      <p><%= t(".description") %></p>
+
+      <%= form_for :password, url: passwords_path do |form| %>
+        <div class="text-field">
+          <%= form.label :email %>
+          <%= form.text_field :email, type: 'email' %>
+        </div>
+
+        <div class="submit-field">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>

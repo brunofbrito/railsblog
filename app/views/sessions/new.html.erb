@@ -1,0 +1,28 @@
+<%= render "layouts/admintop" %>
+<%= render "layouts/navtop" %>
+
+<div class="wrapper">
+  <div class="main-content">
+    <div class="form">
+      <p><%= t(".title") %></p>
+         <%= form_for :session, url: session_path do |form| %>
+
+          <%= form.label :email %>
+          <%= form.text_field :email, type: 'email' %>
+
+          <%= form.label :password %>
+          <%= form.password_field :password %>
+
+          <%= form.submit %>
+
+         <% end %>
+    </div>
+    <hr>
+
+      <% if Clearance.configuration.allow_sign_up? %>
+        <%= link_to t(".sign_up"), sign_up_path %><br>
+      <% end %>
+      <%= link_to t(".forgot_password"), new_password_path %>
+  </div>
+</div>
+<%= render "layouts/footer" %>
