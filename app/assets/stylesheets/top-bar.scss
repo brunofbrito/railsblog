@@ -13,6 +13,8 @@ html, body {
   background-color: $darkgrey;
 }
 
+/* TOP NAVIGATION - ADMIN */
+
 .admin-top {
   background-color: $grey;
   padding: 10px 30px;
@@ -34,11 +36,6 @@ html, body {
   align-items: center;
 }
 
-.user-links {
-  display:flex;
-  align-items: center;
-}
-
 .admin-links a {
     padding: 10px;
     font-family: $headingfont;
@@ -53,6 +50,13 @@ html, body {
         color: $lightgrey;
         background-color: $lightblue;
       }
+}
+
+/* TOP NAVIGATION - USER */
+
+.user-links {
+  display:flex;
+  align-items: center;
 }
 
 .user-links {
@@ -219,9 +223,18 @@ html, body {
 .post-info {
   margin-top: 15px;
   display: flex;
+  justify-content: space-between;
+  
+  .user-avatar {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100%;
+  } 
 }
 
 .time, .author {
+  display: flex;
+  align-items: center;
   color: $darkgrey;
   margin-right: 25px;
   & i {
@@ -239,7 +252,7 @@ html, body {
     &:hover {
       color: $lightblue;
     }
-  }  
+  } 
 }
 
 .post h1 {
