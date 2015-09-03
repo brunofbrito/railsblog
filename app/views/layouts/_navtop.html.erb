@@ -12,5 +12,8 @@
     </div>
     <div class="social-links">
       <%= render "layouts/social" %>
+      <% if not signed_in? %>
+        <%= link_to 'Sign in', sign_in_path, class: "sign-in" %>
+      <% end %>
     </div>
   </div>

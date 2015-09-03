@@ -4,6 +4,7 @@
 <div class="wrapper">
   <div class="main-content">
     <div class="form">
+      <p><i class="fa fa-pencil"></i> Edit post</p>
       <%= form_for @post, url: {action: "update"} do |f| %>
         <%= f.label :title, "Post title" %>
         <%= f.text_field :title %>
@@ -16,7 +17,7 @@
           <img src="<%= @post.featimg.url %>">
         <% end %>
 
-        <%= f.label :featimg, "Upload Featured Image" %>
+        <%= f.label :featimg, "Upload New Featured Image" %>
         <%= f.file_field :featimg %>
 
         <%= f.submit "Update" %>

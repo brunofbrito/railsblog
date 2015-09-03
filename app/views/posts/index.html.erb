@@ -12,7 +12,7 @@
     <div class="post">
     <% @posts.each do |post| %>
       <h1><%= link_to post.title, post_path(post) %></h1>
-      <% if post.user_id == current_user.id %>
+      <% if signed_in? && post.user_id == current_user.id %>
         <div class="author-options">
           <%= link_to '<i class="fa fa-pencil"> Edit</i>'.html_safe, edit_post_path(post) %>
           <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_path(post), method: "delete" %>
