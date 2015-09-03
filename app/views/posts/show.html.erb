@@ -7,7 +7,7 @@
     <div class="post">
       <h1><%= @post.title %></h1>
       <img src="<%= @post.featimg.url %>" />
-        <% if @post.user_id == current_user.id %>
+        <% if signed_in? && @post.user_id == current_user.id %>
             <div class="author-options">
               <%= link_to '<i class="fa fa-pencil"> Edit</i>'.html_safe, edit_post_path(@post) %>
               <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_path(@post), method: "delete" %>
@@ -16,7 +16,7 @@
          <p><%= @post.description %></p>
        <div class="post-info">
         <p class="time"><i class="fa fa-calendar"></i>Posted on: <%= @post.created_at.strftime("%A, %d %B %Y") %></p>
-        <p class="author"><i class="fa fa-user"></i>Written by: <%= @author %></p>
+        <p class="author"><i class="fa fa-user"></i>Written by: <%= User.find(@post.user_id).name %> <%= image_tag(User.find(@post.user_id).avatar.url, :alt => 'User avatar', class: "user-avatar") %></p>
       </div>
       <hr>
     </div>
@@ -25,7 +25,7 @@
       <% @post.comments.each do |comment| %>
         <p><%= comment.comment %></p>
         <p class="comment-data">By <%= comment.name %>, on <%= comment.created_at.strftime("%A, %d %B %Y") %></p>
-        <% if @post.user_id == current_user.id %>
+        <% if signed_in? && @post.user_id == current_user.id %>
                   <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_comment_path(params[:id], comment), method: "delete" %>
           <% end %>
       <% end %>
