@@ -1,29 +1,13 @@
+<%= render "layouts/admintop" %>
 
-<% if signed_in? %>
-  <div class="admin-top">
-    <div class="admin-links">
-      <%= link_to 'Add a post', new_post_path %>
-      <%= link_to 'Blog Settings', settings_path %>
-    </div>
-    <div class="user-links">
-      <%#= link_to 'Edit user', edit_user_path(current_user) %>     
-      <img src="<%=current_user.avatar.url %>" />
-      <p><%= current_user.name %></p>
-      <%= link_to 'Sign out', sign_out_path, method: :delete %>
-    </div>
-  </div>   
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
+<%= render "layouts/navtop" %>
 
   <div class="wrapper">
     <header>
       <div class="branding">
         <img src="<%=@blog.logo.url %>" class="blog-logo" />
-        <%= render "layouts/social" %>
       </div>
     </header>
-  <div class="divider"></div>
   <div class="main-content">
     <div class="post">
     <% @posts.each do |post| %>
@@ -46,9 +30,7 @@
   </div>
 </div>
 
-<footer>
-  <p><%= @blog.title %></p>
-</footer>
+<%= render "layouts/footer" %>
 
     <div id="flash">
       <% flash.each do |key, value| %>

@@ -14,10 +14,9 @@ body {
 }
 
 .admin-top {
-  background-color: $darkblue;
+  background-color: $grey;
   padding: 10px 30px;
   color: $lightgrey;
-  margin-bottom: 20px;
   display:flex;
   justify-content: space-between;
   & img {
@@ -43,14 +42,14 @@ body {
     font-family: $headingfont;
     color: $grey;
     font-size: 16px;
-    background-color: $lightblue;
+    background-color: $darkblue;
     text-transform: uppercase;
     text-decoration: none;
     margin-right: 10px;
     border-radius: 5px;
       &:hover {
-        color: $lightblue;
-        background-color: $grey;
+        color: $lightgrey;
+        background-color: $lightblue;
       }
 }
 
@@ -58,11 +57,76 @@ body {
   p {
     font-style: italic;
     margin: 0px 20px 0px 10px;
-    color: $lightgrey;
+    color: $lightblue;
     font-size: 16px;
   }
   a {
     padding: 10px;
+    font-family: $bodyfont;
+    color: $grey;
+    font-size: 16px;
+    background-color: $darkblue;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 5px;
+      &:hover {
+        color: $grey;
+        background-color: $lightblue;
+      }
+  }
+}
+
+.nav-top {
+  background-color: $darkblue;
+  padding: 10px 30px;
+  color: $lightgrey;
+  display:flex;
+  min-height: 70px;
+  justify-content: space-between;
+  & img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px $darkgrey solid;
+  }
+}
+
+.nav-links {
+  display:flex;
+  align-items: center;
+  ul li {
+    display: inline;
+  }
+}
+
+.social-links {
+  display:flex;
+  align-items: center;
+}
+
+.nav-links a {
+    font-family: $headingfont;
+    color: $grey;
+    font-size: 16px;
+    padding: 40px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+      &:hover {
+        color: $grey;
+        background-color: $lightblue;
+      }
+}
+
+.social-links {
+  p {
+    font-style: italic;
+    margin: 0px 20px 0px 10px;
+    color: $lightgrey;
+    font-size: 16px;
+  }
+  a {
+    padding: 5px;
     font-family: $bodyfont;
     color: $grey;
     font-size: 16px;
@@ -82,10 +146,11 @@ body {
   max-width: 990px;
   margin: 0 auto;
   border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .branding {
-  padding: 25px 50px;
+  padding: 0px 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -102,10 +167,6 @@ body {
   &:hover {
     color: $lightblue;
   }
-}
-
-.divider {
-  height: 20px;
 }
 
 .main-content {
@@ -165,10 +226,107 @@ body {
   }  
 }
 
-footer {
+.post h1 {
+    font-size: 36px;
+    font-family: $headingfont;
+    text-decoration: none;
+    font-weight: 700;
+    color: $lightblue;
+    text-transform: uppercase;
+}
+
+.comments {
+  margin-bottom: 20px;
+  h1 {
+    background-color: $darkgrey;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    padding: 25px;
+    color: $lightgrey;
+    margin-bottom: 10px;
+  }
+  p {
+    font-style: italic;
+  }
+  a, i {
+    margin-bottom: 10px;
+    color: $darkgrey;
+    &:hover {
+      color: $lightblue;
+    }
+  }
+}
+
+p.comment-data {
+  font-family: $headingfont;
+  color: $darkgrey;
+  font-size: 14px;
+}
+
+.leave-comment {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  line-height: 0;
+   p {
+    font-size: 14px;
+    padding: 18px;
+    color: $lightgrey;
+    background-color: $darkblue;
+    text-transform: uppercase;
+    border: 1px solid $lightblue;
+    font-family: $headingfont;
+    text-align: center;
+  }
+  form {
+    label {
+      line-height: 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 10px;
+      color: white;
+      background-color: $lightblue;
+      font: $headingfont;
+      display: block;
+      text-align: center;
+    }
+  }
+  input {
+    display:block;
+    height: 20px;
+    width: 100%;
+    box-sizing : border-box;
+    &:focus {
+      border: 1px solid $darkblue;
+    }
+  }
+  textarea {
+    width: 100%;
+    box-sizing : border-box;
+    &:focus {
+      border: 1px solid $darkblue;
+    }
+  }
+  input[type=submit] {
+    background-color: $darkblue;
+    font-size: 16px;
+    height: 30px;
+    text-transform: uppercase;
+    border: none;
+    color: $lightgrey;
+    &:hover {
+      background-color: $lightblue;
+      color: $lightgrey;
+      }
+    }
+}
+
+.footer {
+  border-bottom: 4px $lightblue solid;
   background-color: $darkblue;
   height: 30px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   p {
     font-family: $bodyfont;
     font-size: 12px;
