@@ -216,7 +216,8 @@ html, body {
   }
   img {
     max-width: 800px;
-    margin: 20px 0;
+    display: flex;
+    margin: 20px auto;
   }
 }
 
