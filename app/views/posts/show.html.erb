@@ -23,8 +23,8 @@
     <div class="comments">
       <h1>Comments</h1>
       <% @post.comments.each do |comment| %>
-        <p><%= comment.description %></p>
-        <p class="comment-data">By <%= comment.title %>, on <%= comment.created_at.strftime("%A, %d %B %Y") %></p>
+        <p><%= comment.comment %></p>
+        <p class="comment-data">By <%= comment.name %>, on <%= comment.created_at.strftime("%A, %d %B %Y") %></p>
         <% if @post.user_id == current_user.id %>
                   <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_comment_path(params[:id], comment), method: "delete" %>
           <% end %>
@@ -33,10 +33,10 @@
       <div class="leave-comment">
       <p><i class="fa fa-pencil-square-o"></i> Leave a comment</p>
       <%= form_for @comment, url: post_comments_path(post_id: @post.id) do |f| %>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-        <%= f.label :description %>
-        <%= f.text_area :description, size: "60x12" %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :comment %>
+        <%= f.text_area :comment, size: "60x12" %>
         <%= f.submit "Create" %>
       <% end %>
       </div>
