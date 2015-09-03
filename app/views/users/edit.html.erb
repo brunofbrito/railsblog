@@ -1,18 +1,24 @@
-<div id="clearance" class="sign-up">
-  <h2>Edit your profile here</h2>
+<%= render "layouts/admintop" %>
+<%= render "layouts/navtop" %>
 
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
+<div class="wrapper">
+  <div class="main-content">
+    <div class="form">
+      <p><i class="fa fa-user"></i> User Settings</p>
+      <%= form_for @user do |form| %>
+        <%= render partial: '/users/form', object: form %>
 
-    <%= form.label :name %>
-    <%= form.text_field :name, type: 'text' %>
+        <%= form.label :name %>
+        <%= form.text_field :name, type: 'text' %>
 
-    <%= form.label(:avatar, :"Upload your avatar")  %>
-    <%= form.file_field :avatar %> <br>
+        <%= form.label(:avatar, :"Upload your avatar")  %>
+        <%= form.file_field :avatar %> <br>
 
-    <div class="submit-field">
-      <%= form.submit 'Update' %>
-    </div><br>
-  
-  <% end %>
+        <%= form.submit 'Update' %>
+      
+      <% end %>
+    </div>
+  </div>
 </div>
+</div>
+<%= render "layouts/footer" %>
