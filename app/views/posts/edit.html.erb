@@ -1,9 +1,28 @@
-<%= form_for @post, url: {action: "update"} do |f| %>
-  <%= f.label :title, "Post title" %>
-  <%= f.text_field :title %>
-  <%= f.label :description, "Post content" %>
-  <%= f.text_area :description, size: "60x12" %>
-  <%= f.label :featimg, "Add a featured image" %>
-  <%= f.file_field :featimg %>
-  <%= f.submit "Update" %>
-<% end %>
+<%= render "layouts/admintop" %>
+<%= render "layouts/navtop" %>
+
+<div class="wrapper">
+  <div class="main-content">
+    <div class="form">
+      <%= form_for @post, url: {action: "update"} do |f| %>
+        <%= f.label :title, "Post title" %>
+        <%= f.text_field :title %>
+
+        <%= f.label :description, "Post content" %>
+        <%= f.text_area :description, size: "60x12" %>
+
+        <% if @post.featimg.url.empty? == false %>
+          <%= f.label("Current Featured Image")  %>
+          <img src="<%= @post.featimg.url %>">
+        <% end %>
+
+        <%= f.label :featimg, "Upload Featured Image" %>
+        <%= f.file_field :featimg %>
+
+        <%= f.submit "Update" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>
