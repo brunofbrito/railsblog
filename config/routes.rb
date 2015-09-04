@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post 'settings' => 'settings#update'
   put 'settings' => 'settings#update'
   patch 'settings' => 'settings#update'
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update, :show]
   resources :posts do
     resources :comments
   end

@@ -11,6 +11,10 @@ module ApplicationHelper
     background = Settings.find(1).bground.url
   end
 
+  def avatar
+    avatar = User.find(params[:id]).avatar.url
+  end
+
   def facebook
     Settings.find(1).facebook
   end

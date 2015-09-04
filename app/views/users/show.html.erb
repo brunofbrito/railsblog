@@ -1,0 +1,35 @@
+<%= render "layouts/admintop" %>
+<%= render "layouts/navtop" %>
+
+    <div class="wrapper">
+    <header>
+      <div class="branding">
+        <img src="<%= logo %>" class="blog-logo" />
+      </div>
+    </header>
+  <div class="main-content">
+    <h1><%= @user.name %></h1>
+    <h2><%= @user.email %></h2>
+    <img src="<%= avatar %>" />
+    <div class="post">
+    <% @posts.each do |post| %>
+      <h1><%= link_to post.title, post_path(post) %></h1>
+      <% if signed_in? && post.user_id == current_user.id %>
+        <div class="author-options">
+          <%= link_to '<i class="fa fa-pencil"> Edit</i>'.html_safe, edit_post_path(post) %>
+          <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_path(post), method: "delete" %>
+        </div>
+      <% end %>
+      <img src="<%= post.featimg.url %>">
+      <p><%= truncate(post.description.html_safe, :length => 300) %></p>
+      <p><%= link_to "Read more...", post_path(post), class:"read-more" %></p>
+      <div class="post-info">
+        <p class="time"><i class="fa fa-calendar"></i>Posted on: <%= post.created_at.strftime("%A, %d %B %Y") %></p>
+        <p class="author"><i class="fa fa-user"></i>Written by: <%= @user.name %> <%= image_tag(@user.avatar.url, :alt => 'User avatar', class: "user-avatar") %> </p>
+      </div>
+      <hr>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>
