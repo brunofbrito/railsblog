@@ -8,9 +8,11 @@
       </div>
     </header>
   <div class="main-content">
-    <h1><%= @user.name %></h1>
-    <h2><%= @user.email %></h2>
-    <img src="<%= avatar %>" />
+    <div class="author-profile">
+      <img src="<%= avatar %>" />
+      <h1><%= @user.name %></h1>
+      <h2><%= @user.email %></h2>
+    </div>
     <div class="post">
     <% @posts.each do |post| %>
       <h1><%= link_to post.title, post_path(post) %></h1>
@@ -25,7 +27,7 @@
       <p><%= link_to "Read more...", post_path(post), class:"read-more" %></p>
       <div class="post-info">
         <p class="time"><i class="fa fa-calendar"></i>Posted on: <%= post.created_at.strftime("%A, %d %B %Y") %></p>
-        <p class="author"><i class="fa fa-user"></i>Written by: <%= @user.name %> <%= image_tag(@user.avatar.url, :alt => 'User avatar', class: "user-avatar") %> </p>
+        <p class="author"><i class="fa fa-user"></i>Written by: <%= link_to @user.name, user_path(@user) %> <%= link_to image_tag(@user.avatar.url, :alt => 'User avatar', class: "user-avatar"), user_path(@user) %> </p>
       </div>
       <hr>
       <% end %>
