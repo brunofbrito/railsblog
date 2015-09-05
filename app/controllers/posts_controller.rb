@@ -2,7 +2,11 @@ class PostsController < ApplicationController
 
   def index
     @blog = Settings.find(1)
-    @posts = Post.paginate(:page => params[:page]).order(created_at: :desc)
+    if params[:search]
+      @posts = Post.search(params[:search]).paginate(:page => params[:page]).order(created_at: :desc)
+    else
+      @posts = Post.paginate(:page => params[:page]).order(created_at: :desc)
+    end
   end
 
   def show
