@@ -28,6 +28,7 @@ gem 'carrierwave'
 gem "font-awesome-rails"
 gem 'ckeditor'
 gem "autoprefixer-rails"
+gem 'will_paginate'
 
 
 # Use ActiveModel has_secure_password
