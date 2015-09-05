@@ -19,7 +19,7 @@
         </div>
       <% end %>
       <img src="<%= post.featimg.url %>">
-      <p><%= truncate(post.description.html_safe, :length => 300) %></p>
+      <p><%= raw post.description.truncate(300) %></p>
       <p><%= link_to "Read more...", post_path(post), class:"read-more" %></p>
       <div class="post-info">
         <p class="time"><i class="fa fa-calendar"></i>Posted on: <%= post.created_at.strftime("%A, %d %B %Y") %></p>

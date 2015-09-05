@@ -1,6 +1,6 @@
 CKEDITOR.editorConfig = function (config) {
   // ... other configuration ...
-
+  config.allowedContent = true;
   config.toolbar = [
     // { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source'] },
     { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
@@ -23,5 +23,4 @@ CKEDITOR.editorConfig = function (config) {
   ];
 
   // ... rest of the original config.js  ...
-  config.allowedContent = true;
 };
