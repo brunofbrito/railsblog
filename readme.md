@@ -10,6 +10,7 @@ A simple blog to train my Rails/HTML/CSS skills.
 - Comments section
 - Pagination
 - WYSIWYG editor for posts
+- Search
 
 ## Challenges
 - Not allowed to use a framework (all CSS built from scratch)
