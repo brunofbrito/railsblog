@@ -270,6 +270,10 @@ html, body {
     color: $darkgrey;
     margin-right: 3px;
   }
+  a {
+    text-decoration: none;
+    color: $darkgrey;    
+  }
 }
 
 .author-options {
