@@ -11,7 +11,7 @@
         <%= form.label :name %>
         <%= form.text_field :name, type: 'text' %>
 
-        <% if current_user.avatar.url.empty? == false %>
+        <% if current_user.avatar.url.blank? == false %>
           <%= form.label("Current avatar")  %>
           <img src="<%= current_user.avatar.url %>">
         <% end %>

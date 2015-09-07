@@ -18,7 +18,7 @@
             <%= form.label(:logo, :"Upload a new logo")  %>
             <%= form.file_field :logo %>
 
-             <% if background.empty? == false %>
+             <% if background.blank? == false %>
                 <%= form.label(:"Current background") %>
                 <img src="<%= background %>">
             <% end %>
