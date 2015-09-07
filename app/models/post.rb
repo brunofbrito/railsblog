@@ -4,6 +4,6 @@ class Post < ActiveRecord::Base
   mount_uploader :featimg, FeatimgUploader
   self.per_page = 5
   def self.search(search)
-    where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
+    where("title ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%")
   end
 end
