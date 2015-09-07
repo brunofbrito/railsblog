@@ -10,7 +10,7 @@
             <%= form.label :title %>
             <%= form.text_field :title, type: 'text' %>
 
-            <% if logo.empty? == false %>
+            <% if logo.blank? == false %>
                 <%= form.label(:"Current logo") %>
                 <img src="<%= logo %>">
             <% end %>
