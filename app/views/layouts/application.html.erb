@@ -9,7 +9,14 @@
 </head>
 <body style="background: url(<%= background %>) no-repeat center center fixed; background-size: cover;">
 
-<%= yield %>
+  <%= render "layouts/admintop" %>
+  <%= render "layouts/navtop" %>
+
+  <div class="wrapper">
+    <%= yield %>
+  </div>
+
+  <%= render "layouts/footer" %>
 
 </body>
 </html>

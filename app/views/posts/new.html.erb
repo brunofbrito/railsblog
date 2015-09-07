@@ -1,20 +1,14 @@
-<%= render "layouts/admintop" %>
-<%= render "layouts/navtop" %>
-
-<div class="wrapper">
-  <div class="main-content">
-  <div class="form">
-    <p><i class="fa fa-plus-square"></i> Add a Post</p>
-        <%= form_for @post, url: {action: "create"} do |f| %>
-          <%= f.label :title, "Post title" %>
-          <%= f.text_field :title %>
-          <%= f.label :description, "Post content" %>
-          <%= f.cktext_area :description %>
-          <%= f.label :featimg, "Add a featured image" %>
-          <%= f.file_field :featimg %>
-          <%= f.submit "Create" %>
-      <% end %>
-    </div>
+<div class="main-content">
+<div class="form">
+  <p><i class="fa fa-plus-square"></i> Add a Post</p>
+      <%= form_for @post, url: {action: "create"} do |f| %>
+        <%= f.label :title, "Post title" %>
+        <%= f.text_field :title %>
+        <%= f.label :description, "Post content" %>
+        <%= f.cktext_area :description %>
+        <%= f.label :featimg, "Add a featured image" %>
+        <%= f.file_field :featimg %>
+        <%= f.submit "Create" %>
+    <% end %>
   </div>
 </div>
-<%= render "layouts/footer" %>

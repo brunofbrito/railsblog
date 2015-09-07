@@ -1,45 +1,38 @@
-<%= render "layouts/admintop" %>
-
-<%= render "layouts/navtop" %>
-
-<div class="wrapper">
-  <div class="main-content">
-    <div class="post">
-      <h1><%= @post.title %></h1>
-      <img src="<%= @post.featimg.url %>" />
-        <% if signed_in? && @post.user_id == current_user.id %>
-            <div class="author-options">
-              <%= link_to '<i class="fa fa-pencil"> Edit</i>'.html_safe, edit_post_path(@post) %>
-              <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_path(@post), method: "delete" %>
-            </div>
-        <% end %>
-         <p><%= raw @post.description %></p>
-       <div class="post-info">
-        <p class="time"><i class="fa fa-calendar"></i>Posted on: <%= @post.created_at.strftime("%A, %d %B %Y") %></p>
-        <p class="author"><i class="fa fa-user"></i>Written by:&nbsp; <%= link_to User.find(@post.user_id).name, user_path(User.find(@post.user_id)) %> <%= link_to image_tag(User.find(@post.user_id).avatar.url, :alt => 'User avatar', class: "user-avatar"), user_path(User.find(@post.user_id)) %></p>
-      </div>
-      <hr>
-    </div>
-    <div class="comments">
-      <h1>Comments</h1>
-      <% @post.comments.each do |comment| %>
-        <p><%= comment.comment %></p>
-        <p class="comment-data">By <%= comment.name %>, on <%= comment.created_at.strftime("%A, %d %B %Y") %></p>
-        <% if signed_in? && @post.user_id == current_user.id %>
-                  <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_comment_path(params[:id], comment), method: "delete" %>
-          <% end %>
+<div class="main-content">
+  <div class="post">
+    <h1><%= @post.title %></h1>
+    <img src="<%= @post.featimg.url %>" />
+      <% if signed_in? && @post.user_id == current_user.id %>
+          <div class="author-options">
+            <%= link_to '<i class="fa fa-pencil"> Edit</i>'.html_safe, edit_post_path(@post) %>
+            <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_path(@post), method: "delete" %>
+          </div>
       <% end %>
+       <p><%= raw @post.description %></p>
+     <div class="post-info">
+      <p class="time"><i class="fa fa-calendar"></i>Posted on: <%= @post.created_at.strftime("%A, %d %B %Y") %></p>
+      <p class="author"><i class="fa fa-user"></i>Written by:&nbsp; <%= link_to User.find(@post.user_id).name, user_path(User.find(@post.user_id)) %> <%= link_to image_tag(User.find(@post.user_id).avatar.url, :alt => 'User avatar', class: "user-avatar"), user_path(User.find(@post.user_id)) %></p>
     </div>
-      <div class="form">
-      <p><i class="fa fa-pencil-square-o"></i> Leave a comment</p>
-      <%= form_for @comment, url: post_comments_path(post_id: @post.id) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.label :comment %>
-        <%= f.text_area :comment, size: "60x12" %>
-        <%= f.submit "Create" %>
-      <% end %>
-      </div>
+    <hr>
   </div>
+  <div class="comments">
+    <h1>Comments</h1>
+    <% @post.comments.each do |comment| %>
+      <p><%= comment.comment %></p>
+      <p class="comment-data">By <%= comment.name %>, on <%= comment.created_at.strftime("%A, %d %B %Y") %></p>
+      <% if signed_in? && @post.user_id == current_user.id %>
+                <%= link_to '<i class="fa fa-times"> Delete</i>'.html_safe, post_comment_path(params[:id], comment), method: "delete" %>
+        <% end %>
+    <% end %>
+  </div>
+    <div class="form">
+    <p><i class="fa fa-pencil-square-o"></i> Leave a comment</p>
+    <%= form_for @comment, url: post_comments_path(post_id: @post.id) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :comment %>
+      <%= f.text_area :comment, size: "60x12" %>
+      <%= f.submit "Create" %>
+    <% end %>
+    </div>
 </div>
-<%= render "layouts/footer" %>

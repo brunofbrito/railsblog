@@ -1,56 +1,50 @@
-<%= render "layouts/admintop" %>
-<%= render "layouts/navtop" %>
+<div class="main-content">
+<div class="form">
+<p><i class="fa fa-wrench"></i> Blog Settings</p>
+    <%= form_for @settings, url: {action: "update"} do |form| %>
+      
+        <%= form.label :title %>
+        <%= form.text_field :title, type: 'text' %>
 
-<div class="wrapper">
-  <div class="main-content">
-  <div class="form">
-    <p><i class="fa fa-wrench"></i> Blog Settings</p>
-        <%= form_for @settings, url: {action: "update"} do |form| %>
-          
-            <%= form.label :title %>
-            <%= form.text_field :title, type: 'text' %>
-
-            <% if logo.blank? == false %>
-                <%= form.label(:"Current logo") %>
-                <img src="<%= logo %>">
-            <% end %>
-
-            <%= form.label(:logo, :"Upload a new logo")  %>
-            <%= form.file_field :logo %>
-
-             <% if background.blank? == false %>
-                <%= form.label(:"Current background") %>
-                <img src="<%= background %>">
-            <% end %>
-
-            <%= form.label(:bground, :"Upload a new background")  %>
-            <%= form.file_field :bground %>
-
-            <div class="submit-field">
-              <%= form.submit 'Update' %>
-            </div>
+        <% if logo.blank? == false %>
+            <%= form.label(:"Current logo") %>
+            <img src="<%= logo %>">
         <% end %>
+
+        <%= form.label(:logo, :"Upload a new logo")  %>
+        <%= form.file_field :logo %>
+
+         <% if background.blank? == false %>
+            <%= form.label(:"Current background") %>
+            <img src="<%= background %>">
+        <% end %>
+
+        <%= form.label(:bground, :"Upload a new background")  %>
+        <%= form.file_field :bground %>
+
+        <div class="submit-field">
+          <%= form.submit 'Update' %>
         </div>
-        <hr>
-        <div class="form">
-            <p><i class="fa fa-users"></i> Social networks (URL please):</p>
-            <%= form_for @settings, url: {action: "update"} do |form| %>
-                <%= form.label(:facebook, :"Facebook")  %>
-                <%= form.text_field :facebook %>
-                <%= form.label(:twitter, :"Twitter")  %>
-                <%= form.text_field :twitter %>
-                <%= form.label(:linkedin, :"LinkedIn")  %>
-                <%= form.text_field :linkedin %>
-                <%= form.label(:instagram, :"Instagram")  %>
-                <%= form.text_field :instagram %>
-                <%= form.label(:youtube, :"YouTube")  %>
-                <%= form.text_field :youtube %>
-                <%= form.label(:github, :"Github")  %>
-                <%= form.text_field :github %>
-                <%= form.submit 'Update' %>
-            <% end %>
-            </div>
+    <% end %>
+    </div>
+    <hr>
+    <div class="form">
+        <p><i class="fa fa-users"></i> Social networks (URL please):</p>
+        <%= form_for @settings, url: {action: "update"} do |form| %>
+            <%= form.label(:facebook, :"Facebook")  %>
+            <%= form.text_field :facebook %>
+            <%= form.label(:twitter, :"Twitter")  %>
+            <%= form.text_field :twitter %>
+            <%= form.label(:linkedin, :"LinkedIn")  %>
+            <%= form.text_field :linkedin %>
+            <%= form.label(:instagram, :"Instagram")  %>
+            <%= form.text_field :instagram %>
+            <%= form.label(:youtube, :"YouTube")  %>
+            <%= form.text_field :youtube %>
+            <%= form.label(:github, :"Github")  %>
+            <%= form.text_field :github %>
+            <%= form.submit 'Update' %>
+        <% end %>
         </div>
     </div>
 </div>
-<%= render "layouts/footer" %>
